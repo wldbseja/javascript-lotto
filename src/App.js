@@ -34,9 +34,10 @@ class App {
   }
 
   generateRandomLottoNumbers(buyLottoCount) {
+    this.lottoArray = [];
     for (let i = 0; i < buyLottoCount; i++) {
       const numbers = MissionUtils.Random.pickUniqueNumbersInRange(1, 45, 6);
-      new Lotto(numbers);
+      this.lottoArray.push(new Lotto(numbers));
     }
   }
 
@@ -44,7 +45,7 @@ class App {
     MissionUtils.Console.readLine(
       PRINT_STRING.INPUT_WINNING_NUMBER,
       (winningNumber) => {
-        this.convertWinningNumber(winningNumber);
+        this.winningNumbers = this.convertWinningNumber(winningNumber);
       }
     );
   }

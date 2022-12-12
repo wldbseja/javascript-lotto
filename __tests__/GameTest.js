@@ -11,4 +11,11 @@ describe('로또 게임 기능 테스트', () => {
     expect(() => app.checkBuyAmount(10000)).not.toThrow();
     expect(() => app.checkBuyAmount(100000)).not.toThrow();
   });
+
+  test('makeLottoCount', () => {
+    const app = new App();
+    expect(app.makeLottoCount(1000)).toEqual(1);
+    expect(app.makeLottoCount(5000)).toEqual(5);
+    expect(app.makeLottoCount(10000)).toEqual(10);
+  });
 });

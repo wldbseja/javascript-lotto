@@ -1,9 +1,12 @@
+const MissionUtils = require('@woowacourse/mission-utils');
+
 class Lotto {
   #numbers;
 
   constructor(numbers) {
     this.validate(numbers);
     this.#numbers = numbers.sort((a, b) => a - b);
+    this.printLottoNumbers(numbers);
   }
 
   validate(numbers) {
@@ -12,6 +15,9 @@ class Lotto {
     }
   }
 
+  printLottoNumbers(numbers) {
+    MissionUtils.Console.print(numbers);
+  }
   // TODO: 추가 기능 구현
 }
 

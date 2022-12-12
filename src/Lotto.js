@@ -9,12 +9,12 @@ class Lotto {
     this.printLottoNumbers(numbers);
   }
 
-  validateNumbers(numbers) {
-    this.validateNumbersLength(numbers);
+  validateWinningNumbers(winningNumbers) {
+    this.validateNumbersLength(winningNumbers);
   }
 
-  validateNumbersLength(numbers) {
-    if (numbers.length !== 6) {
+  validateNumbersLength(winningNumbers) {
+    if (winningNumbers.length !== 6) {
       throw Error(PRINT_ERROR_STRING.ERROR_NUMBER_LENGTH);
     }
   }

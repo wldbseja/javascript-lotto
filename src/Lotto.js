@@ -10,9 +10,10 @@ class Lotto {
   }
 
   validateWinningNumbers(winningNumbers) {
-    this.validateNumbersLength(winningNumbers);
-    this.validateNumbersDuple(winningNumbers);
-    this.validateNumbersRange(winningNumbers);
+    this.winningNumbers = winningNumbers;
+    this.validateNumbersLength(this.winningNumbers);
+    this.validateNumbersDuple(this.winningNumbers);
+    this.validateNumbersRange(this.winningNumbers);
   }
 
   validateNumbersLength(winningNumbers) {
@@ -36,12 +37,13 @@ class Lotto {
     }
   }
 
-  validateBonusNumber(bonusNumber) {}
+  validateBonusNumber(bonusNumber) {
+    this.bonusNumber = bonusNumber;
+  }
 
   printLottoNumbers(numbers) {
     MissionUtils.Console.print(numbers);
   }
-  // TODO: 추가 기능 구현
 }
 
 module.exports = Lotto;

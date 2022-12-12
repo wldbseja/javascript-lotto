@@ -67,8 +67,16 @@ class App {
       PRINT_STRING.INPUT_BONUS_NUMBER,
       (bonusNumber) => {
         this.bonusNumber = Number(bonusNumber);
+        this.sendLottoClassBonusNumbers(this.bonusNumber);
       }
     );
+  }
+
+  sendLottoClassBonusNumbers(bonusNumber) {
+    let oneLength = this.lottoArray.length - this.lottoArray.length + 1;
+    for (let i = 0; i < oneLength; i++) {
+      this.lottoArray[i].validateBonusNumber(bonusNumber);
+    }
   }
 
   play() {

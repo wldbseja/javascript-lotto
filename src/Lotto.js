@@ -36,6 +36,8 @@ class Lotto {
     }
   }
 
+  validateBonusNumber(bonusNumber) {}
+
   printLottoNumbers(numbers) {
     MissionUtils.Console.print(numbers);
   }

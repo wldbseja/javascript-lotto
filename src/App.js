@@ -57,7 +57,7 @@ class App {
 
   sendLottoClassWinningNumbers(winningNumbers) {
     for (let i = 0; i < this.lottoArray.length; i++) {
-      this.lottoArray[i].validateNumbers(winningNumbers);
+      this.lottoArray[i].validateWinningNumbers(winningNumbers);
     }
   }
 

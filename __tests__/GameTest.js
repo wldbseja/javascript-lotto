@@ -18,4 +18,14 @@ describe('로또 게임 기능 테스트', () => {
     expect(app.makeLottoCount(5000)).toEqual(5);
     expect(app.makeLottoCount(10000)).toEqual(10);
   });
+
+  test('convertWinningNumber', () => {
+    const app = new App();
+    expect(app.convertWinningNumber('1, 2, 3, 4, 5, 6')).toEqual([
+      1, 2, 3, 4, 5, 6,
+    ]);
+    expect(app.convertWinningNumber('6, 5, 4, 3, 2, 1')).toEqual([
+      6, 5, 4, 3, 2, 1,
+    ]);
+  });
 });

@@ -46,12 +46,19 @@ class App {
       PRINT_STRING.INPUT_WINNING_NUMBER,
       (winningNumber) => {
         this.winningNumbers = this.convertWinningNumber(winningNumber);
+        this.sendLottoClassWinningNumbers(this.winningNumbers);
       }
     );
   }
 
   convertWinningNumber(winningNumber) {
     return winningNumber.split(',').map(Number);
+  }
+
+  sendLottoClassWinningNumbers(winningNumbers) {
+    for (let i = 0; i < this.lottoArray.length; i++) {
+      this.lottoArray[i].validateNumbers(winningNumbers);
+    }
   }
 
   play() {

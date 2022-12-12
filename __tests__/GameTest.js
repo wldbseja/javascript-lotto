@@ -45,4 +45,14 @@ describe('로또 게임 기능 테스트', () => {
 
     expect(() => lotto.validateNumbersDuple([1, 2, 3, 4, 5, 6])).not.toThrow();
   });
+
+  test('validateNumbersRange', () => {
+    const lotto = new Lotto([1, 2, 3, 4, 5, 6]);
+
+    expect(() => lotto.validateNumbersRange([0, 2, 3, 4, 5, 6])).toThrow();
+    expect(() => lotto.validateNumbersRange([1, 2, 3, 4, 5, 46])).toThrow();
+
+    expect(() => lotto.validateNumbersRange([1, 2, 3, 4, 5, 6])).not.toThrow();
+    expect(() => lotto.validateNumbersRange([1, 2, 3, 4, 5, 45])).not.toThrow();
+  });
 });

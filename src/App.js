@@ -73,8 +73,7 @@ class App {
   }
 
   sendLottoClassBonusNumbers(bonusNumber) {
-    let oneLength = this.lottoArray.length - this.lottoArray.length + 1;
-    for (let i = 0; i < oneLength; i++) {
+    for (let i = 0; i < this.lottoArray.length; i++) {
       this.lottoArray[i].validateBonusNumber(bonusNumber);
     }
   }

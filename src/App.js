@@ -47,6 +47,7 @@ class App {
       (winningNumber) => {
         this.winningNumbers = this.convertWinningNumber(winningNumber);
         this.sendLottoClassWinningNumbers(this.winningNumbers);
+        this.inputBonusNumbers();
       }
     );
   }
@@ -59,6 +60,13 @@ class App {
     for (let i = 0; i < this.lottoArray.length; i++) {
       this.lottoArray[i].validateWinningNumbers(winningNumbers);
     }
+  }
+
+  inputBonusNumbers() {
+    MissionUtils.Console.readLine(
+      PRINT_STRING.INPUT_BONUS_NUMBER,
+      (bonusNumber) => {}
+    );
   }
 
   play() {

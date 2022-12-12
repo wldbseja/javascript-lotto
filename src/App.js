@@ -4,6 +4,7 @@ const {
   PRINT_STRING,
   PRINT_ERROR_STRING,
 } = require('./constants');
+const Lotto = require('./Lotto');
 
 class App {
   constructor() {}
@@ -17,6 +18,7 @@ class App {
         MissionUtils.Console.print(
           PRINT_STRING.BUY_LOTTO_COUNT(this.buyLottoCount)
         );
+        this.generateRandomLottoNumbers(this.buyLottoCount);
       }
     );
   }
@@ -28,6 +30,13 @@ class App {
 
   makeLottoCount(buyAmount) {
     return buyAmount / LOTTO_ONE_TICKET;
+  }
+
+  generateRandomLottoNumbers(buyLottoCount) {
+    for (let i = 0; i < buyLottoCount; i++) {
+      const numbers = MissionUtils.Random.pickUniqueNumbersInRange(1, 45, 6);
+      new Lotto(numbers);
+    }
   }
 
   play() {

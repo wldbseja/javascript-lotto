@@ -14,6 +14,9 @@ class App {
       (buyAmount) => {
         this.checkBuyAmount(buyAmount);
         this.buyLottoCount = this.makeLottoCount(buyAmount);
+        MissionUtils.Console.print(
+          PRINT_STRING.BUY_LOTTO_COUNT(this.buyLottoCount)
+        );
       }
     );
   }

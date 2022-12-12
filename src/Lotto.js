@@ -12,6 +12,7 @@ class Lotto {
   validateWinningNumbers(winningNumbers) {
     this.validateNumbersLength(winningNumbers);
     this.validateNumbersDuple(winningNumbers);
+    this.validateNumbersRange(winningNumbers);
   }
 
   validateNumbersLength(winningNumbers) {
@@ -24,6 +25,14 @@ class Lotto {
     let setWinning = new Set(winningNumbers);
     if (setWinning.size !== 6) {
       throw Error(PRINT_ERROR_STRING.ERROR_NUMBER_DUPLE);
+    }
+  }
+
+  validateNumbersRange(winningNumbers) {
+    for (let i = 0; i < winningNumbers.length; i++) {
+      if (!(winningNumbers[i] > 0 && winningNumbers[i] < 46)) {
+        throw Error(PRINT_ERROR_STRING.ERROR_NUMBER_RANGE);
+      }
     }
   }
 

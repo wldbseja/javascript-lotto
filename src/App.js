@@ -13,6 +13,7 @@ class App {
       PRINT_STRING.INPUT_BUY_AMOUNT,
       (buyAmount) => {
         this.checkBuyAmount(buyAmount);
+        this.buyLottoCount = this.makeLottoCount(buyAmount);
       }
     );
   }
@@ -20,6 +21,10 @@ class App {
   checkBuyAmount(buyAmount) {
     if (buyAmount % LOTTO_ONE_TICKET !== 0)
       throw Error(PRINT_ERROR_STRING.ERROR_BUY_AMOUNT);
+  }
+
+  makeLottoCount(buyAmount) {
+    return buyAmount / LOTTO_ONE_TICKET;
   }
 
   play() {

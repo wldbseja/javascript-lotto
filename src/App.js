@@ -66,7 +66,7 @@ class App {
     MissionUtils.Console.readLine(
       PRINT_STRING.INPUT_BONUS_NUMBER,
       (bonusNumber) => {
-        this.bonusNumber = Number(bonusNumber);
+        this.bonusNumber = [Number(bonusNumber)];
         this.sendLottoClassBonusNumbers(this.bonusNumber);
       }
     );

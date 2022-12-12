@@ -1,4 +1,5 @@
 const MissionUtils = require('@woowacourse/mission-utils');
+const { PRINT_ERROR_STRING } = require('./constants');
 
 class Lotto {
   #numbers;
@@ -14,7 +15,7 @@ class Lotto {
 
   validateNumbersLength(numbers) {
     if (numbers.length !== 6) {
-      throw new Error('[ERROR] 로또 번호는 6개여야 합니다.');
+      throw Error(PRINT_ERROR_STRING.ERROR_NUMBER_LENGTH);
     }
   }
 

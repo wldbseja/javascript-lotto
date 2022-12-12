@@ -39,6 +39,15 @@ class Lotto {
 
   validateBonusNumber(bonusNumber) {
     this.bonusNumber = bonusNumber;
+    this.validateBonusNumbersDuple(this.bonusNumber, this.winningNumbers);
+  }
+
+  validateBonusNumbersDuple(bonusNumber, winningNumbers) {
+    for (let i = 0; i < this.bonusNumber.length; i++) {
+      if (this.winningNumbers.indexOf(this.bonusNumber[i]) !== -1) {
+        throw Error(PRINT_ERROR_STRING.ERROR_NUMBER_DUPLE);
+      }
+    }
   }
 
   printLottoNumbers(numbers) {

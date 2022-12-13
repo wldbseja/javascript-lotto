@@ -61,4 +61,12 @@ describe('App 기능 테스트', () => {
     expect(() => app.validateNumbersRange([1, 2, 3, 4, 5, 6])).not.toThrow();
     expect(() => app.validateNumbersRange([1, 2, 3, 4, 5, 45])).not.toThrow();
   });
+
+  test('convertBonusNumbers', () => {
+    const app = new App();
+
+    expect(app.convertBonusNumbers(1)).toEqual([1]);
+    expect(app.convertBonusNumbers(10)).toEqual([10]);
+    expect(app.convertBonusNumbers(45)).toEqual([45]);
+  });
 });

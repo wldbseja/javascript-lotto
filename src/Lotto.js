@@ -12,7 +12,14 @@ class Lotto {
     MissionUtils.Console.print(`[${lottoArray}]`);
   }
 
-  makeStatistics(winningNumber, bonusNumber) {}
+  makeStatistics(winningNumber, bonusNumber) {
+    let winningCount = 0;
+    for (let i = 0; i < winningNumber.length; i++) {
+      if (this.#numbers.includes(winningNumber[i])) {
+        winningCount++;
+      }
+    }
+  }
 }
 
 module.exports = Lotto;

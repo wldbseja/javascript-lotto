@@ -104,11 +104,25 @@ class App {
   }
 
   sendLottoClass(winningNumber, bonusNumber) {
+    this.rankArray = [];
     for (let i = 0; i < this.lottoArray.length; i++) {
       let rankArray = this.lottoArray[i].makeStatistics(
         winningNumber,
         bonusNumber
       );
+      this.rankArray.push(rankArray);
+    }
+    this.calculationRevenue(this.rankArray);
+  }
+
+  calculationRevenue(rankArray) {
+    let answer = [0, 0, 0, 0, 0];
+    for (let i = 0; i < rankArray.length; i++) {
+      for (let j = 0; j < rankArray[i].length; j++) {
+        if (rankArray[i][j] === 1) {
+          answer[j] += 1;
+        }
+      }
     }
   }
 

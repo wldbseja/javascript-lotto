@@ -11,6 +11,8 @@ class Lotto {
   printLottoArray(lottoArray) {
     MissionUtils.Console.print(`[${lottoArray}]`);
   }
+
+  makeStatistics(winningNumber, bonusNumber) {}
 }
 
 module.exports = Lotto;

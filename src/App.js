@@ -83,6 +83,7 @@ class App {
     MissionUtils.Console.readLine(PRINT_STRING.BONUS_NUMBER, (bonusNumber) => {
       this.bonusNumber = this.convertBonusNumbers(bonusNumber);
       this.validateBonusNumber(this.bonusNumber);
+      this.sendLottoClass(this.winningNumber, this.bonusNumber);
     });
   }
 
@@ -99,6 +100,15 @@ class App {
     for (let i = 0; i < bonusNumber.length; i++) {
       if (winningNumbers.indexOf(bonusNumber[i]) !== -1)
         throw Error(PRINT_ERROR_STRING.ERROR_DUPLE_NUMBER);
+    }
+  }
+
+  sendLottoClass(winningNumber, bonusNumber) {
+    for (let i = 0; i < this.lottoArray.length; i++) {
+      let rankArray = this.lottoArray[i].makeStatistics(
+        winningNumber,
+        bonusNumber
+      );
     }
   }
 

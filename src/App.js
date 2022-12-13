@@ -45,12 +45,22 @@ class App {
       PRINT_STRING.WINNING_NUMBERS,
       (winningNumber) => {
         this.winningNumber = this.convertWinningNumbers(winningNumber);
+        this.validateWinningNumbers(this.winningNumber);
       }
     );
   }
 
   convertWinningNumbers(winningNumber) {
     return winningNumber.split(',').map(Number);
+  }
+
+  validateWinningNumbers(winningNumber) {
+    this.validateWinningNumbersLength(winningNumber);
+  }
+
+  validateWinningNumbersLength(winningNumber) {
+    if (winningNumber.length !== 6)
+      throw Error(PRINT_ERROR_STRING.ERROR_LENGTH_NUMBER);
   }
 
   play() {

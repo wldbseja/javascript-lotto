@@ -92,6 +92,7 @@ class App {
 
   validateBonusNumber(bonusNumber) {
     this.validateBonusNumberDuple(this.winningNumber, bonusNumber);
+    this.validateNumbersRange(bonusNumber);
   }
 
   validateBonusNumberDuple(winningNumbers, bonusNumber) {

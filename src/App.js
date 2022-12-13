@@ -12,6 +12,7 @@ class App {
     MissionUtils.Console.readLine(
       PRINT_STRING.INPUT_BUY_AMOUNT,
       (buyAmount) => {
+        this.buyAmount = buyAmount;
         this.validateBuyAmount(buyAmount);
         const amountCount = this.makeAmountCount(buyAmount);
         MissionUtils.Console.print(PRINT_STRING.AMOUNT_COUNT(amountCount));

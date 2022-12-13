@@ -91,12 +91,12 @@ class App {
   }
 
   validateBonusNumber(bonusNumber) {
-    this.validateBonusNumberDuple(bonusNumber);
+    this.validateBonusNumberDuple(this.winningNumber, bonusNumber);
   }
 
-  validateBonusNumberDuple(bonusNumber) {
+  validateBonusNumberDuple(winningNumbers, bonusNumber) {
     for (let i = 0; i < bonusNumber.length; i++) {
-      if (this.winningNumber.indexOf(bonusNumber[i]) !== -1)
+      if (winningNumbers.indexOf(bonusNumber[i]) !== -1)
         throw Error(PRINT_ERROR_STRING.ERROR_DUPLE_NUMBER);
     }
   }

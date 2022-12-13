@@ -14,6 +14,7 @@ class App {
       (buyAmount) => {
         this.validateBuyAmount(buyAmount);
         const amountCount = this.makeAmountCount(buyAmount);
+        MissionUtils.Console.print(PRINT_STRING.AMOUNT_COUNT(amountCount));
       }
     );
   }

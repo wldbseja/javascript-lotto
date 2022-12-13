@@ -15,4 +15,13 @@ const PRINT_ERROR_STRING = {
   ERROR_RANGE_NUMBER: '[ERROR] 로또 번호는 1부터 45 사이의 숫자여야 합니다.',
 };
 
+const PRINT_WINNING_RESULT = [
+  (number) => `3개 일치 (5,000원) - ${number}개`,
+  (number) => `4개 일치 (50,000원) - ${number}개`,
+  (number) => `5개 일치 (1,500,000원) - ${number}개`,
+  (number) => `5개 일치, 보너스 볼 일치 (30,000,000원) - ${number}개`,
+  (number) => `6개 일치 (2,000,000,000원) - ${number}개`,
+  (number) => `총 수익률은 ${number}%입니다.`,
+];
+
 module.exports = { LOTTO_ONE_TICKET, PRINT_STRING, PRINT_ERROR_STRING };

@@ -1,4 +1,5 @@
 const MissionUtils = require('@woowacourse/mission-utils');
+const Lotto = require('./Lotto');
 const {
   LOTTO_ONE_TICKET,
   PRINT_STRING,
@@ -16,6 +17,7 @@ class App {
         this.validateBuyAmount(buyAmount);
         const amountCount = this.makeAmountCount(buyAmount);
         MissionUtils.Console.print(PRINT_STRING.AMOUNT_COUNT(amountCount));
+        this.sendGenerateRandomLottoNumbers(amountCount);
       }
     );
   }
@@ -27,6 +29,14 @@ class App {
 
   makeAmountCount(buyAmount) {
     return buyAmount / LOTTO_ONE_TICKET;
+  }
+
+  sendGenerateRandomLottoNumbers(amountCount) {
+    this.lottoArray = [];
+    for (let i = 0; i < amountCount; i++) {
+      const numbers = MissionUtils.Random.pickUniqueNumbersInRange(1, 45, 6);
+      this.lottoArray.push(new Lotto(numbers));
+    }
   }
 
   play() {

@@ -96,7 +96,7 @@ class App {
 
   validateBonusNumberDuple(bonusNumber) {
     for (let i = 0; i < bonusNumber.length; i++) {
-      if (this.winningNumber.indexOf(bonusNumber[i] !== -1))
+      if (this.winningNumber.indexOf(bonusNumber[i]) !== -1)
         throw Error(PRINT_ERROR_STRING.ERROR_DUPLE_NUMBER);
     }
   }

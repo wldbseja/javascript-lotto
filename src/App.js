@@ -18,6 +18,7 @@ class App {
         const amountCount = this.makeAmountCount(buyAmount);
         MissionUtils.Console.print(PRINT_STRING.AMOUNT_COUNT(amountCount));
         this.sendGenerateRandomLottoNumbers(amountCount);
+        this.inputWinningNumbers();
       }
     );
   }
@@ -37,6 +38,13 @@ class App {
       const numbers = MissionUtils.Random.pickUniqueNumbersInRange(1, 45, 6);
       this.lottoArray.push(new Lotto(numbers));
     }
+  }
+
+  inputWinningNumbers() {
+    MissionUtils.Console.readLine(
+      PRINT_STRING.WINNING_NUMBERS,
+      (winningNumber) => {}
+    );
   }
 
   play() {

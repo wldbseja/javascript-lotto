@@ -80,10 +80,13 @@ class App {
   }
 
   inputBonusNumber() {
-    MissionUtils.Console.readLine(
-      PRINT_STRING.BONUS_NUMBER,
-      (bonusNumber) => {}
-    );
+    MissionUtils.Console.readLine(PRINT_STRING.BONUS_NUMBER, (bonusNumber) => {
+      this.bonusNumber = this.convertBonusNumbers(bonusNumber);
+    });
+  }
+
+  convertBonusNumbers(bonusNumber) {
+    return [Number(bonusNumber)];
   }
 
   play() {

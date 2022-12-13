@@ -83,7 +83,7 @@ class App {
     MissionUtils.Console.readLine(PRINT_STRING.BONUS_NUMBER, (bonusNumber) => {
       this.bonusNumber = this.convertBonusNumbers(bonusNumber);
       this.validateBonusNumber(this.bonusNumber);
-      this.sendLottoClass(this.winningNumber, this.bonusNumber);
+      this.compareNumbers();
     });
   }
 
@@ -103,6 +103,11 @@ class App {
     }
   }
 
+  compareNumbers() {
+    this.sendLottoClass(this.winningNumber, this.bonusNumber);
+    this.saveStatCount(this.rankArray);
+  }
+
   sendLottoClass(winningNumber, bonusNumber) {
     this.rankArray = [];
     for (let i = 0; i < this.lottoArray.length; i++) {
@@ -112,15 +117,14 @@ class App {
       );
       this.rankArray.push(rankArray);
     }
-    this.saveStatCount(this.rankArray);
   }
 
   saveStatCount(rankArray) {
-    let answer = [0, 0, 0, 0, 0];
+    this.rankCount = [0, 0, 0, 0, 0];
     for (let i = 0; i < rankArray.length; i++) {
       for (let j = 0; j < rankArray[i].length; j++) {
         if (rankArray[i][j] === 1) {
-          answer[j] += 1;
+          this.rankCount[j] += 1;
         }
       }
     }

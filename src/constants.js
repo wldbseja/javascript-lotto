@@ -21,7 +21,14 @@ const PRINT_WINNING_RESULT = [
   (number) => `5개 일치 (1,500,000원) - ${number}개`,
   (number) => `5개 일치, 보너스 볼 일치 (30,000,000원) - ${number}개`,
   (number) => `6개 일치 (2,000,000,000원) - ${number}개`,
-  (number) => `총 수익률은 ${number}%입니다.`,
 ];
 
-module.exports = { LOTTO_ONE_TICKET, PRINT_STRING, PRINT_ERROR_STRING };
+const PRINT_REVENUE_RESULT = [(number) => `총 수익률은 ${number}%입니다.`];
+
+module.exports = {
+  LOTTO_ONE_TICKET,
+  PRINT_STRING,
+  PRINT_ERROR_STRING,
+  PRINT_WINNING_RESULT,
+  PRINT_REVENUE_RESULT,
+};

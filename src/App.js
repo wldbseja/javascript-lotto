@@ -106,6 +106,7 @@ class App {
   compareNumbers() {
     this.sendLottoClass(this.winningNumber, this.bonusNumber);
     this.saveStatCount(this.rankArray);
+    this.revenueCalculation(this.rankCount);
   }
 
   sendLottoClass(winningNumber, bonusNumber) {
@@ -128,6 +129,18 @@ class App {
         }
       }
     }
+  }
+
+  revenueCalculation(rankCount) {
+    const rewardArray = [2000000000, 30000000, 1500000, 50000, 5000];
+    console.log(rewardArray, rankCount);
+    let answer = 0;
+    for (let i = 0; i < rankCount.length; i++) {
+      if (rankCount[i] > 0) {
+        answer = rewardArray[i] * rankCount[i];
+      }
+    }
+    this.profitAmount = ((answer / this.buyAmount) * 100).toFixed(1);
   }
 
   play() {

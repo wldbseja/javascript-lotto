@@ -9,7 +9,7 @@ class Lotto {
   }
 
   printLottoArray(lottoArray) {
-    MissionUtils.Console.print(lottoArray);
+    MissionUtils.Console.print(`[${lottoArray}]`);
   }
 }
 

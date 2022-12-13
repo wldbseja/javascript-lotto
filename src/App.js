@@ -112,10 +112,10 @@ class App {
       );
       this.rankArray.push(rankArray);
     }
-    this.calculationRevenue(this.rankArray);
+    this.saveStatCount(this.rankArray);
   }
 
-  calculationRevenue(rankArray) {
+  saveStatCount(rankArray) {
     let answer = [0, 0, 0, 0, 0];
     for (let i = 0; i < rankArray.length; i++) {
       for (let j = 0; j < rankArray[i].length; j++) {

@@ -51,4 +51,14 @@ describe('App 기능 테스트', () => {
       app.validateWinningNumbersDuple([1, 2, 3, 4, 5, 6])
     ).not.toThrow();
   });
+
+  test('validateNumbersRange', () => {
+    const app = new App();
+
+    expect(() => app.validateNumbersRange([0, 2, 3, 4, 5, 6])).toThrow();
+    expect(() => app.validateNumbersRange([1, 2, 3, 4, 5, 46])).toThrow();
+
+    expect(() => app.validateNumbersRange([1, 2, 3, 4, 5, 6])).not.toThrow();
+    expect(() => app.validateNumbersRange([1, 2, 3, 4, 5, 45])).not.toThrow();
+  });
 });

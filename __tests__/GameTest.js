@@ -69,4 +69,16 @@ describe('App 기능 테스트', () => {
     expect(app.convertBonusNumbers(10)).toEqual([10]);
     expect(app.convertBonusNumbers(45)).toEqual([45]);
   });
+
+  test('validateBonusNumberDuple', () => {
+    const app = new App();
+
+    expect(() =>
+      app.validateBonusNumberDuple([1, 2, 3, 4, 5, 6], [6])
+    ).toThrow();
+
+    expect(() =>
+      app.validateBonusNumberDuple([1, 2, 3, 4, 5, 6], [7])
+    ).not.toThrow();
+  });
 });

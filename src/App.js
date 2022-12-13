@@ -4,6 +4,8 @@ const {
   LOTTO_ONE_TICKET,
   PRINT_STRING,
   PRINT_ERROR_STRING,
+  PRINT_WINNING_RESULT,
+  PRINT_REVENUE_RESULT,
 } = require('./constants');
 
 class App {
@@ -107,6 +109,7 @@ class App {
     this.sendLottoClass(this.winningNumber, this.bonusNumber);
     this.saveStatCount(this.rankArray);
     this.revenueCalculation(this.rankCount);
+    this.printWinningResult(this.rankCount, this.profitAmount);
   }
 
   sendLottoClass(winningNumber, bonusNumber) {
@@ -141,6 +144,16 @@ class App {
       }
     }
     this.profitAmount = ((answer / this.buyAmount) * 100).toFixed(1);
+  }
+
+  printWinningResult(rankCount, profitAmount) {
+    MissionUtils.Console.print(PRINT_STRING.WINNING_STATISTICS);
+    for (let i = 0; i < PRINT_WINNING_RESULT.length; i++) {
+      MissionUtils.Console.print(PRINT_WINNING_RESULT[i](rankCount[i]));
+    }
+    for (let i = 0; i < PRINT_REVENUE_RESULT.length; i++) {
+      MissionUtils.Console.print(PRINT_REVENUE_RESULT[i](profitAmount));
+    }
   }
 
   play() {

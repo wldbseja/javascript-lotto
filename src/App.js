@@ -154,6 +154,7 @@ class App {
     for (let i = 0; i < PRINT_REVENUE_RESULT.length; i++) {
       MissionUtils.Console.print(PRINT_REVENUE_RESULT[i](profitAmount));
     }
+    MissionUtils.Console.close();
   }
 
   play() {

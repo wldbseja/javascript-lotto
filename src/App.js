@@ -46,6 +46,7 @@ class App {
       (winningNumber) => {
         this.winningNumber = this.convertWinningNumbers(winningNumber);
         this.validateWinningNumbers(this.winningNumber);
+        this.inputBonusNumber();
       }
     );
   }
@@ -76,6 +77,13 @@ class App {
       if (!(numbers[i] > 0 && numbers[i] < 46))
         throw Error(PRINT_ERROR_STRING.ERROR_RANGE_NUMBER);
     }
+  }
+
+  inputBonusNumber() {
+    MissionUtils.Console.readLine(
+      PRINT_STRING.BONUS_NUMBER,
+      (bonusNumber) => {}
+    );
   }
 
   play() {

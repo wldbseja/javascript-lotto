@@ -82,11 +82,23 @@ class App {
   inputBonusNumber() {
     MissionUtils.Console.readLine(PRINT_STRING.BONUS_NUMBER, (bonusNumber) => {
       this.bonusNumber = this.convertBonusNumbers(bonusNumber);
+      this.validateBonusNumber(this.bonusNumber);
     });
   }
 
   convertBonusNumbers(bonusNumber) {
     return [Number(bonusNumber)];
+  }
+
+  validateBonusNumber(bonusNumber) {
+    this.validateBonusNumberDuple(bonusNumber);
+  }
+
+  validateBonusNumberDuple(bonusNumber) {
+    for (let i = 0; i < bonusNumber.length; i++) {
+      if (this.winningNumber.indexOf(bonusNumber[i] !== -1))
+        throw Error(PRINT_ERROR_STRING.ERROR_DUPLE_NUMBER);
+    }
   }
 
   play() {

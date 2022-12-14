@@ -25,7 +25,7 @@ const PRINT_WINNING_STATISTICS = [
   (number) => `6개 일치 (2,000,000,000원) - ${number}개`,
 ];
 
-const PRINT_REVENUE = [(number) => `총 수익률은 ${number}%입니다.`];
+const PRINT_REVENUE = (number) => `총 수익률은 ${number}%입니다.`;
 
 module.exports = {
   LOTTO_ONE_TICKET,

@@ -14,7 +14,7 @@ const ERROR_PRINT_STRING = {
   ERROR_BUY_AMOUNT: '[ERROR] 구입 금액이 잘못되었습니다.',
   ERROR_NUMBER_LENGTH: '[ERROR] 로또 번호 길이가 맞지 않습니다.',
   ERROR_NUMBER_DUPLE: '[ERROR] 로또 번호가 중복 되었습니다.',
-  ERROR_NUMBER_RANGE: '[ERROR] 로또 번호가 범위가 맞지 않습니다.',
+  ERROR_NUMBER_RANGE: '[ERROR] 로또 번호의 범위가 맞지 않습니다.',
 };
 
 const PRINT_WINNING_STATISTICS = [

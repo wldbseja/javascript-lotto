@@ -48,4 +48,13 @@ describe('APP 기능 테스트', () => {
       app.validateNumberDuplicate([1, 2, 3, 4, 5, 6, 7])
     ).not.toThrow();
   });
+
+  test('validateNumberRange', () => {
+    const app = new App();
+    expect(() => app.validateNumberRange(0)).toThrow();
+    expect(() => app.validateNumberRange(46)).toThrow();
+
+    expect(() => app.validateNumberRange(1)).not.toThrow();
+    expect(() => app.validateNumberRange(45)).not.toThrow();
+  });
 });

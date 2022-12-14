@@ -93,6 +93,7 @@ class App {
           ...this.winningNumbers,
           this.bonusNumber,
         ]);
+        this.validateNumberRange(this.bonusNumber);
       }
     );
   }

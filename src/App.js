@@ -94,8 +94,26 @@ class App {
           this.bonusNumber,
         ]);
         this.validateNumberRange(this.bonusNumber);
+        this.numbers();
       }
     );
+  }
+
+  numbers() {
+    this.rankCount = this.makeRankCount(
+      this.lottoArray,
+      this.winningNumbers,
+      this.bonusNumber
+    );
+  }
+
+  makeRankCount(lottoArray, winningNumbers, bonusNumber) {
+    let rankCount = [0, 0, 0, 0, 0, 0];
+    for (let i = 0; i < lottoArray.length; i++) {
+      const rankIndex = lottoArray[i].getRankIndex(winningNumbers, bonusNumber);
+      rankCount[rankIndex] += 1;
+    }
+    return rankCount;
   }
 
   play() {

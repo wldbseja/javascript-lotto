@@ -24,12 +24,12 @@ class Lotto {
     for (let i = 0; i < winningNumbers.length; i++) {
       if (this.#numbers.includes(winningNumbers[i])) count++;
     }
-    if (count === 6) return 0;
-    if (count === 3) return 4;
-    if (count === 4) return 3;
+    if (count === 6) return 4;
+    if (count === 3) return 0;
+    if (count === 4) return 1;
     if (count === 5) {
       if (this.#numbers.includes(bonusNumber)) {
-        return 1;
+        return 3;
       } else {
         return 2;
       }

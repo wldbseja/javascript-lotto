@@ -87,7 +87,9 @@ class App {
   inputBonusNumber() {
     MissionUtils.Console.readLine(
       PRINT_STRING.INPUT_BONUS_NUMBER,
-      (bonusNumber) => {}
+      (bonusNumber) => {
+        this.bonusNumber = Number(bonusNumber);
+      }
     );
   }
 

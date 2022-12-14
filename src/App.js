@@ -1,4 +1,5 @@
 const MissionUtils = require('@woowacourse/mission-utils');
+const Lotto = require('./Lotto');
 const {
   LOTTO_ONE_TICKET,
   LOTTO_LENGTH,
@@ -21,6 +22,7 @@ class App {
         MissionUtils.Console.print(
           PRINT_STRING.PRINT_AMOUNT_COUNT(this.amountCount)
         );
+        this.makeLottoArray(this.amountCount);
       }
     );
   }
@@ -32,6 +34,14 @@ class App {
 
   makeAmountCount(buyAmount) {
     return buyAmount / LOTTO_ONE_TICKET;
+  }
+
+  makeLottoArray(amountCount) {
+    this.lottoArray = [];
+    for (let i = 0; i < amountCount; i++) {
+      const numbers = MissionUtils.Random.pickUniqueNumbersInRange(1, 45, 6);
+      this.lottoArray.push(new Lotto(numbers));
+    }
   }
 
   play() {

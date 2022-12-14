@@ -17,6 +17,7 @@ class App {
       (buyAmount) => {
         this.buyAmount = buyAmount;
         this.validateBuyAmount(buyAmount);
+        this.amountCount = this.makeAmountCount(buyAmount);
       }
     );
   }
@@ -24,6 +25,10 @@ class App {
   validateBuyAmount(buyAmount) {
     if (buyAmount % LOTTO_ONE_TICKET !== 0)
       throw Error(ERROR_PRINT_STRING.ERROR_BUY_AMOUNT);
+  }
+
+  makeAmountCount(buyAmount) {
+    return buyAmount / LOTTO_ONE_TICKET;
   }
 
   play() {

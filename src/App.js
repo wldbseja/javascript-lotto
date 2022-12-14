@@ -62,6 +62,9 @@ class App {
   validateWinningNumbers(winningNumbers) {
     this.validateNumberLength(winningNumbers);
     this.validateNumberDuplicate(winningNumbers);
+    for (let i = 0; i < winningNumbers.length; i++) {
+      this.validateNumberRange(winningNumbers[i]);
+    }
   }
 
   validateNumberLength(winningNumbers) {
@@ -73,6 +76,11 @@ class App {
     const setNumber = new Set(numbers);
     if (setNumber.size !== numbers.length)
       throw Error(ERROR_PRINT_STRING.ERROR_NUMBER_DUPLE);
+  }
+
+  validateNumberRange(numbers) {
+    if (!(numbers >= 1 && numbers <= 45))
+      throw Error(ERROR_PRINT_STRING.ERROR_NUMBER_RANGE);
   }
 
   play() {

@@ -37,4 +37,15 @@ describe('APP 기능 테스트', () => {
     expect(() => app.validateNumberLength([1, 2, 3, 4, 5, 6])).not.toThrow();
     expect(() => app.validateNumberLength([6, 5, 4, 3, 2, 1])).not.toThrow();
   });
+
+  test('validateNumberDuplicate', () => {
+    const app = new App();
+    expect(() => app.validateNumberDuplicate([1, 2, 3, 4, 5, 5])).toThrow();
+    expect(() => app.validateNumberDuplicate([1, 2, 3, 4, 5, 6, 6])).toThrow();
+
+    expect(() => app.validateNumberDuplicate([1, 2, 3, 4, 5, 6])).not.toThrow();
+    expect(() =>
+      app.validateNumberDuplicate([1, 2, 3, 4, 5, 6, 7])
+    ).not.toThrow();
+  });
 });

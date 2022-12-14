@@ -106,6 +106,7 @@ class App {
       this.bonusNumber
     );
     const revenue = this.calculateRevenue(rankCount, this.buyAmount);
+    this.printWinningStatistics(rankCount, revenue);
   }
 
   makeRankCount(lottoArray, winningNumbers, bonusNumber) {
@@ -126,6 +127,15 @@ class App {
     }
     revenue = ((winningAmount / buyAmount) * 100).toFixed(1);
     return revenue;
+  }
+
+  printWinningStatistics(rankCount, revenue) {
+    MissionUtils.Console.print(PRINT_STRING.PRINT_WINNING_PHRASES);
+
+    for (let i = 0; i < PRINT_WINNING_STATISTICS.length; i++) {
+      MissionUtils.Console.print(PRINT_WINNING_STATISTICS[i](rankCount[i]));
+    }
+    MissionUtils.Console.print(PRINT_REVENUE(revenue));
   }
 
   play() {

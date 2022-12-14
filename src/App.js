@@ -48,8 +48,14 @@ class App {
   inputWinningNumbers() {
     MissionUtils.Console.readLine(
       PRINT_STRING.INPUT_WINNING_NUMBERS,
-      (winningNumbers) => {}
+      (winningNumbers) => {
+        this.winningNumbers = this.convertWinningNumbers(winningNumbers);
+      }
     );
+  }
+
+  convertWinningNumbers(winningNumbers) {
+    return winningNumbers.split(',').map(Number);
   }
 
   play() {

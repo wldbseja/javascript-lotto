@@ -23,6 +23,7 @@ class App {
           PRINT_STRING.PRINT_AMOUNT_COUNT(this.amountCount)
         );
         this.makeLottoArray(this.amountCount);
+        this.inputWinningNumbers();
       }
     );
   }
@@ -42,6 +43,13 @@ class App {
       const numbers = MissionUtils.Random.pickUniqueNumbersInRange(1, 45, 6);
       this.lottoArray.push(new Lotto(numbers));
     }
+  }
+
+  inputWinningNumbers() {
+    MissionUtils.Console.readLine(
+      PRINT_STRING.INPUT_WINNING_NUMBERS,
+      (winningNumbers) => {}
+    );
   }
 
   play() {

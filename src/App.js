@@ -100,11 +100,12 @@ class App {
   }
 
   numbers() {
-    this.rankCount = this.makeRankCount(
+    const rankCount = this.makeRankCount(
       this.lottoArray,
       this.winningNumbers,
       this.bonusNumber
     );
+    const revenue = this.calculateRevenue(rankCount, this.buyAmount);
   }
 
   makeRankCount(lottoArray, winningNumbers, bonusNumber) {
@@ -114,6 +115,17 @@ class App {
       rankCount[rankIndex] += 1;
     }
     return rankCount;
+  }
+
+  calculateRevenue(rankCount, buyAmount) {
+    const winningAmountArray = [2000000000, 30000000, 1500000, 50000, 5000];
+    let winningAmount = 0;
+    let revenue = 0;
+    for (let i = 0; i < winningAmountArray.length; i++) {
+      winningAmount += rankCount[i] * winningAmountArray[i];
+    }
+    revenue = ((winningAmount / buyAmount) * 100).toFixed(1);
+    return revenue;
   }
 
   play() {

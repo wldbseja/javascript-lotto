@@ -118,7 +118,7 @@ class App {
   }
 
   calculateRevenue(rankCount, buyAmount) {
-    const winningAmountArray = [2000000000, 30000000, 1500000, 50000, 5000];
+    const winningAmountArray = [5000, 50000, 1500000, 30000000, 200000000];
     let winningAmount = 0;
     let revenue = 0;
     for (let i = 0; i < winningAmountArray.length; i++) {

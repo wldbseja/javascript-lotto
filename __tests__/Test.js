@@ -28,4 +28,13 @@ describe('APP 기능 테스트', () => {
       6, 5, 4, 3, 2, 1,
     ]);
   });
+
+  test('validateNumberLength', () => {
+    const app = new App();
+    expect(() => app.validateNumberLength([1, 2, 3, 4, 5])).toThrow();
+    expect(() => app.validateNumberLength([1, 2, 3, 4, 5, 6, 7])).toThrow();
+
+    expect(() => app.validateNumberLength([1, 2, 3, 4, 5, 6])).not.toThrow();
+    expect(() => app.validateNumberLength([6, 5, 4, 3, 2, 1])).not.toThrow();
+  });
 });

@@ -61,11 +61,18 @@ class App {
 
   validateWinningNumbers(winningNumbers) {
     this.validateNumberLength(winningNumbers);
+    this.validateNumberDuplicate(winningNumbers);
   }
 
   validateNumberLength(winningNumbers) {
     if (winningNumbers.length !== 6)
       throw Error(ERROR_PRINT_STRING.ERROR_NUMBER_LENGTH);
+  }
+
+  validateNumberDuplicate(numbers) {
+    const setNumber = new Set(numbers);
+    if (setNumber.size !== numbers.length)
+      throw Error(ERROR_PRINT_STRING.ERROR_NUMBER_DUPLE);
   }
 
   play() {

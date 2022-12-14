@@ -16,7 +16,7 @@ class Lotto {
   }
 
   PrintLottoArray(lottoArray) {
-    MissionUtils.Console.print(lottoArray);
+    MissionUtils.Console.print('[' + lottoArray.join(', ') + ']');
   }
 
   getRankIndex(winningNumbers, bonusNumber) {

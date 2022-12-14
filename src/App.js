@@ -18,6 +18,9 @@ class App {
         this.buyAmount = buyAmount;
         this.validateBuyAmount(buyAmount);
         this.amountCount = this.makeAmountCount(buyAmount);
+        MissionUtils.Console.print(
+          PRINT_STRING.PRINT_AMOUNT_COUNT(this.amountCount)
+        );
       }
     );
   }

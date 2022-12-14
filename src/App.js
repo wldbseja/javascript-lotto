@@ -89,6 +89,10 @@ class App {
       PRINT_STRING.INPUT_BONUS_NUMBER,
       (bonusNumber) => {
         this.bonusNumber = Number(bonusNumber);
+        this.validateNumberDuplicate([
+          ...this.winningNumbers,
+          this.bonusNumber,
+        ]);
       }
     );
   }

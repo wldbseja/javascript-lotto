@@ -17,12 +17,12 @@ describe('로또 클래스 테스트', () => {
   test('getRankIndex', () => {
     const lotto = new Lotto([1, 2, 3, 4, 5, 6]);
 
-    expect(lotto.getRankIndex([1, 2, 3, 7, 8, 9], 10)).toEqual(4);
-    expect(lotto.getRankIndex([1, 2, 3, 4, 8, 9], 10)).toEqual(3);
-    expect(lotto.getRankIndex([1, 2, 3, 4, 5, 9], 10)).toEqual(2);
-    expect(lotto.getRankIndex([1, 2, 3, 4, 5, 9], 6)).toEqual(1);
-    expect(lotto.getRankIndex([1, 2, 3, 4, 5, 6], 9)).toEqual(0);
     expect(lotto.getRankIndex([7, 8, 9, 10, 11, 12], 13)).toEqual(5);
+    expect(lotto.getRankIndex([1, 2, 3, 4, 5, 6], 10)).toEqual(4);
+    expect(lotto.getRankIndex([1, 2, 3, 4, 5, 9], 6)).toEqual(3);
+    expect(lotto.getRankIndex([1, 2, 3, 4, 5, 9], 10)).toEqual(2);
+    expect(lotto.getRankIndex([1, 2, 3, 4, 8, 9], 6)).toEqual(1);
+    expect(lotto.getRankIndex([1, 2, 3, 8, 9, 10], 11)).toEqual(0);
   });
 
   // 아래에 추가 테스트 작성 가능

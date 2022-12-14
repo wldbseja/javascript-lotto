@@ -11,7 +11,18 @@ const {
 class App {
   constructor() {}
 
-  play() {}
+  inputBuyAmount() {
+    MissionUtils.Console.readLine(
+      PRINT_STRING.INPUT_BUY_AMOUNT,
+      (buyAmount) => {}
+    );
+  }
+
+  play() {
+    this.inputBuyAmount();
+  }
 }
 
+const app = new App();
+app.play();
 module.exports = App;

@@ -1,4 +1,5 @@
 const App = require('../src/App');
+const Lotto = require('../src/Lotto');
 
 describe('APP 기능 테스트', () => {
   test('validateBuyAmount', () => {
@@ -56,5 +57,25 @@ describe('APP 기능 테스트', () => {
 
     expect(() => app.validateNumberRange(1)).not.toThrow();
     expect(() => app.validateNumberRange(45)).not.toThrow();
+  });
+
+  test('makeRankCount', () => {
+    const app = new App();
+    const randomNumbers = [
+      [1, 2, 3, 4, 5, 6],
+      [1, 2, 3, 4, 5, 7],
+      [1, 2, 3, 4, 5, 8],
+      [1, 2, 3, 4, 8, 9],
+      [1, 2, 3, 8, 9, 10],
+      [11, 12, 13, 18, 19, 20],
+    ];
+    const lottoArray = [];
+    for (let i = 0; i < randomNumbers.length; i++) {
+      lottoArray.push(new Lotto(randomNumbers[i]));
+    }
+
+    expect(app.makeRankCount(lottoArray, [1, 2, 3, 4, 5, 6], 7)).toEqual([
+      1, 1, 1, 1, 1, 1,
+    ]);
   });
 });

@@ -82,12 +82,10 @@ describe('APP 기능 테스트', () => {
   test('calculateRevenue', () => {
     const app = new App();
 
-    expect(app.calculateRevenue([0, 0, 0, 0, 1, 0], 5000)).toEqual('100.0');
-    expect(app.calculateRevenue([0, 0, 0, 1, 0, 0], 5000)).toEqual('1000.0');
+    expect(app.calculateRevenue([1, 0, 0, 0, 0, 0], 5000)).toEqual('100.0');
+    expect(app.calculateRevenue([0, 1, 0, 0, 0, 0], 5000)).toEqual('1000.0');
     expect(app.calculateRevenue([0, 0, 1, 0, 0, 0], 5000)).toEqual('30000.0');
-    expect(app.calculateRevenue([0, 1, 0, 0, 0, 0], 5000)).toEqual('600000.0');
-    expect(app.calculateRevenue([1, 0, 0, 0, 0, 0], 5000)).toEqual(
-      '40000000.0'
-    );
+    expect(app.calculateRevenue([0, 0, 0, 1, 0, 0], 5000)).toEqual('600000.0');
+    expect(app.calculateRevenue([0, 0, 0, 0, 1, 0], 5000)).toEqual('4000000.0');
   });
 });

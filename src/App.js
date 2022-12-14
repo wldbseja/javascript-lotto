@@ -14,8 +14,16 @@ class App {
   inputBuyAmount() {
     MissionUtils.Console.readLine(
       PRINT_STRING.INPUT_BUY_AMOUNT,
-      (buyAmount) => {}
+      (buyAmount) => {
+        this.buyAmount = buyAmount;
+        this.validateBuyAmount(buyAmount);
+      }
     );
+  }
+
+  validateBuyAmount(buyAmount) {
+    if (buyAmount % LOTTO_ONE_TICKET !== 0)
+      throw Error(ERROR_PRINT_STRING.ERROR_BUY_AMOUNT);
   }
 
   play() {
